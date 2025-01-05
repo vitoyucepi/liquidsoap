@@ -297,7 +297,7 @@ jobs:
           path: ${{ github.workspace }}/${{ github.run_number }}/metrics
       - name: Upload metrics
         if: needs.build_details.outputs.is_fork != 'true' && matrix.target == '@citest'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: metrics
@@ -366,7 +366,7 @@ jobs:
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Run pre-commit
         if: matrix.ocaml-compiler == '4.14.x'
-        uses: pre-commit/action@v3.0.1
+        uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
 
   build_posix:
     runs-on: ${{ matrix.runs-on }}
