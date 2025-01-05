@@ -131,7 +131,7 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version: latest
       - name: Parse using tree-sitter
@@ -148,7 +148,7 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version: latest
       - name: Parse using liquidsoap-lezer-print-tree
