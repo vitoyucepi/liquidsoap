@@ -189,7 +189,7 @@ jobs:
           cp -rf html/* /tmp/${{ github.run_number }}/html
       - name: Push content
         if: success() && github.repository_owner == 'savonet'
-        uses: crazy-max/ghaction-github-pages@v4
+        uses: crazy-max/ghaction-github-pages@fbf0a4fa4e00f45accd6cf3232368436ec06ed59 # v4.1.0
         with:
           repo: savonet/savonet.github.io
           target_branch: master
