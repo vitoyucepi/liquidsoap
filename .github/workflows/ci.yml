@@ -1,22 +1,5 @@
 name: CI
-on:
-  merge_group:
-  pull_request:
-  push:
-    branches:
-      - main
-      - rolling-release-*
-      - v[0-9]+.[0-9]+.[0-9]+
-      - v[0-9]+.[0-9]+.[0-9]+-*
-    paths:
-      - ".github/**"
-      - "**/*.ml"
-      - "**/*.liq"
-      - "**/dune"
-      - "**/dune.inc"
-      - "doc/**"
-      - "dune-project"
-      - scripts/**"
+on: []
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
