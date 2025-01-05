@@ -58,7 +58,7 @@ jobs:
       HOME: /home/opam
     steps:
       - name: Get number of CPU cores
-        uses: savonet/github-actions-cpu-cores-docker@v1
+        uses: savonet/github-actions-cpu-cores-docker@f72bcfaa219a2f60deaf8b26d0707b1d9c67d274 # v1
         id: cpu_cores
       - name: Checkout code
         run: |
@@ -171,7 +171,7 @@ jobs:
       HOME: /home/opam
     steps:
       - name: Get number of CPU cores
-        uses: savonet/github-actions-cpu-cores-docker@v1
+        uses: savonet/github-actions-cpu-cores-docker@f72bcfaa219a2f60deaf8b26d0707b1d9c67d274 # v1
         id: cpu_cores
       - name: Checkout code
         run: |
@@ -229,7 +229,7 @@ jobs:
       HOME: /home/opam
     steps:
       - name: Get number of CPU cores
-        uses: savonet/github-actions-cpu-cores-docker@v1
+        uses: savonet/github-actions-cpu-cores-docker@f72bcfaa219a2f60deaf8b26d0707b1d9c67d274 # v1
         id: cpu_cores
       - name: Enable core dump
         run: |
@@ -385,7 +385,7 @@ jobs:
       IS_SNAPSHOT: ${{ needs.build_details.outputs.is_snapshot == 'true' }}
     steps:
       - name: Get number of CPU cores
-        uses: savonet/github-actions-cpu-cores-docker@v1
+        uses: savonet/github-actions-cpu-cores-docker@f72bcfaa219a2f60deaf8b26d0707b1d9c67d274 # v1
         id: cpu_cores
       - name: Checkout code
         run: |
@@ -506,7 +506,7 @@ jobs:
       TOOLPREF64: /usr/src/mxe/usr/bin/x86_64-w64-mingw32.static-
     steps:
       - name: Get number of CPU cores
-        uses: savonet/github-actions-cpu-cores-docker@v1
+        uses: savonet/github-actions-cpu-cores-docker@f72bcfaa219a2f60deaf8b26d0707b1d9c67d274 # v1
         id: cpu_cores
       - name: Checkout code
         run: |
