@@ -41,7 +41,7 @@ jobs:
       is_snapshot: ${{ steps.build_details.outputs.is_snapshot }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Get build details
         env:
           IS_FORK: ${{ github.event.pull_request.head.repo.fork == true }}
@@ -129,7 +129,7 @@ jobs:
     needs: build_details
     steps:
       - name: Checkout latest code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -146,7 +146,7 @@ jobs:
     needs: build_details
     steps:
       - name: Checkout latest code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -336,7 +336,7 @@ jobs:
           - 5.2.x
     steps:
       - name: Checkout latest code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Update packages
         run: |
           sudo apt-get update
@@ -555,7 +555,7 @@ jobs:
     if: needs.build_details.outputs.is_release
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Tag commit
         uses: savonet/latest-tag@any-context
         with:
@@ -623,7 +623,7 @@ jobs:
         include: ${{ fromJson(needs.build_details.outputs.build_include) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Download all artifact
@@ -654,7 +654,7 @@ jobs:
         include: ${{ fromJson(needs.build_details.outputs.build_include) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Download all artifact
@@ -681,7 +681,7 @@ jobs:
         include: ${{ fromJson(needs.build_details.outputs.build_include) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Download all artifact
@@ -712,7 +712,7 @@ jobs:
         include: ${{ fromJson(needs.build_details.outputs.build_include) }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Download all artifact
@@ -738,7 +738,7 @@ jobs:
     if: needs.build_details.outputs.docker_release
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Push consolidated manifest
         run: .github/scripts/push-docker.sh ${{ needs.build_details.outputs.branch }} ${{ secrets.DOCKERHUB_USER }} ${{ secrets.DOCKERHUB_PASSWORD }} ${{ github.actor }} ${{ secrets.GITHUB_TOKEN }} ${{ github.sha }}
 
@@ -748,6 +748,6 @@ jobs:
     if: needs.build_details.outputs.docker_release
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Push consolidated manifest
         run: .github/scripts/push-docker.sh ${{ needs.build_details.outputs.branch }}-minimal ${{ secrets.DOCKERHUB_USER }} ${{ secrets.DOCKERHUB_PASSWORD }} ${{ github.actor }} ${{ secrets.GITHUB_TOKEN }} ${{ github.sha }}-minimal
