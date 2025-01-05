@@ -343,7 +343,7 @@ jobs:
         if: matrix.ocaml-compiler == '4.14.x'
         run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
       - name: Restore pre-commit cache
-        uses: actions/cache@v3
+        uses: actions/cache@f4b3439a656ba812b8cb417d2d49f9c810103092 # v3.4.0
         with:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
