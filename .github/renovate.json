@@ -10,7 +10,7 @@
   },
   "packageRules": [
     {
-      "matchDepNames": ["savonet/latest-tag", "savonet/liquidsoap-ci"],
+      "matchDepNames": ["savonet/liquidsoap-ci"],
       "matchManagers": ["github-actions"],
       "enabled": false
     }
