@@ -1,17 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices", ":automergeMinor"],
+  "extends": [
+    "config:best-practices",
+    "helpers:pinGitHubActionDigestsToSemver",
+    ":automergeMinor"
+  ],
   "dockerfile": {
     "enabled": false
   },
   "packageRules": [
     {
-      "matchDepNames": [
-        "peaceiris/actions-gh-pages",
-        "pre-commit/action",
-        "savonet/latest-tag",
-        "savonet/liquidsoap-ci"
-      ],
+      "matchDepNames": ["savonet/latest-tag", "savonet/liquidsoap-ci"],
       "matchManagers": ["github-actions"],
       "enabled": false
     }
