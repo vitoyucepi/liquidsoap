@@ -349,7 +349,7 @@ jobs:
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
       - name: Run pre-commit
         if: matrix.ocaml-compiler == '4.14.x'
-        uses: pre-commit/action@v3.0.0
+        uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
 
   build_posix:
     runs-on: ${{ matrix.runs-on }}
