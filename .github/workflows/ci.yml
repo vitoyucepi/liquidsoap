@@ -585,7 +585,7 @@ jobs:
           cat CHANGES.md | sed -e "/---/,\$d" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: Delete old release assets
-        uses: mknejp/delete-release-assets@a1a36d1b6c6ddd9226a08e9978a5b4b973d48c0d # v1
+        uses: mknejp/delete-release-assets@ea7ff12c30ef2589fe4311264f3a336d01325030 # v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ needs.build_details.outputs.branch }}
