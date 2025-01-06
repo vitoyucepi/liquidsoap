@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_details
     container:
-      image: savonet/liquidsoap-ci:debian_bookworm
+      image: savonet/liquidsoap-ci:debian_bookworm@sha256:a9e3ce58f99dd80e06e50239cd51530c451d37e4a8fc6947ebcf7375ef1e41e4
       options: --user opam
     env:
       HOME: /home/opam
@@ -101,7 +101,7 @@ jobs:
   build_js:
     runs-on: ubuntu-latest
     container:
-      image: savonet/liquidsoap-ci:debian_bookworm
+      image: savonet/liquidsoap-ci:debian_bookworm@sha256:a9e3ce58f99dd80e06e50239cd51530c451d37e4a8fc6947ebcf7375ef1e41e4
       options: --user opam
     env:
       HOME: /home/opam
@@ -165,7 +165,7 @@ jobs:
     needs: build_details
     if: github.event_name != 'pull_request' && github.repository_owner == 'savonet' && needs.build_details.outputs.branch == 'main'
     container:
-      image: savonet/liquidsoap-ci:debian_bookworm
+      image: savonet/liquidsoap-ci:debian_bookworm@sha256:a9e3ce58f99dd80e06e50239cd51530c451d37e4a8fc6947ebcf7375ef1e41e4
       options: --user root -v ${{ github.workspace }}/${{ github.run_number }}:/tmp/${{ github.run_number }}
     env:
       HOME: /home/opam
@@ -219,7 +219,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_details
     container:
-      image: savonet/liquidsoap-ci:debian_bookworm
+      image: savonet/liquidsoap-ci:debian_bookworm@sha256:a9e3ce58f99dd80e06e50239cd51530c451d37e4a8fc6947ebcf7375ef1e41e4
       options: --user root --privileged --ulimit core=-1 --security-opt seccomp=unconfined -v ${{ github.workspace }}/${{ github.run_number }}:/tmp/${{ github.run_number }}
     strategy:
       fail-fast: false
