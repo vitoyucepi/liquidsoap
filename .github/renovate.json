@@ -5,10 +5,13 @@
     "helpers:pinGitHubActionDigestsToSemver",
     ":automergeMinor"
   ],
-  "docker": {
-    "enabled": false
-  },
   "packageRules": [
+    {
+      "matchCategories": [
+        "docker"
+      ],
+      "enabled": false
+    },
     {
       "matchDepNames": [
         "mknejp/delete-release-assets",
