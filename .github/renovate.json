@@ -5,14 +5,17 @@
     "helpers:pinGitHubActionDigestsToSemver",
     ":automergeMinor"
   ],
-  "dockerfile": {
+  "docker": {
     "enabled": false
   },
   "packageRules": [
     {
-      "matchDepNames": ["savonet/liquidsoap-ci"],
-      "matchManagers": ["github-actions"],
-      "enabled": false
+      "matchDepNames": [
+        "mknejp/delete-release-assets",
+        "savonet/aws-s3-docker-action",
+        "savonet/latest-tag"
+      ],
+      "overrideDatasource": "github-refs"
     }
   ]
 }
