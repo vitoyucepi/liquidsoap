@@ -557,7 +557,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Tag commit
-        uses: savonet/latest-tag@faacb085a084a77a6b3deb205cab9764f108e93f # any-context
+        uses: savonet/latest-tag@bc4241a8af113ada88c6e8051d275a3cb133fc59 # any-context
         with:
           description: Liquidsoap ${{ needs.build_details.outputs.branch }}
           tag-name: ${{ needs.build_details.outputs.branch }}
