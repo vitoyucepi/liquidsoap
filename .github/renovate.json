@@ -5,13 +5,24 @@
     "helpers:pinGitHubActionDigestsToSemver",
     ":automergeMinor"
   ],
-  "dockerfile": {
-    "enabled": false
-  },
   "packageRules": [
     {
-      "matchDepNames": ["savonet/liquidsoap-ci"],
-      "matchManagers": ["github-actions"],
+      "matchDepNames": ["mknejp/delete-release-assets"],
+      "overrideDatasource": "git-refs",
+      "overridePackageName": "https://github.com/mknejp/delete-release-assets"
+    },
+    {
+      "matchDepNames": ["savonet/aws-s3-docker-action"],
+      "overrideDatasource": "git-refs",
+      "overridePackageName": "https://github.com/savonet/aws-s3-docker-action"
+    },
+    {
+      "matchDepNames": ["savonet/latest-tag"],
+      "overrideDatasource": "git-refs",
+      "overridePackageName": "https://github.com/savonet/latest-tag"
+    },
+    {
+      "matchDatasources": ["docker"],
       "enabled": false
     }
   ]
